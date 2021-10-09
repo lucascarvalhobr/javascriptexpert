@@ -16,6 +16,7 @@ class File{
         const content = await File.getFileContent(filePath);
         const validation = File.isValid(content);
         if(!validation.valid){
+            console.log(validation);
             throw new Error(validation);
         }
         return content;
@@ -55,7 +56,7 @@ class File{
 
 (async () => {
     // const result = File.csvToJson('../mocks/emptyFile-invalid.csv');
-    const result = await File.csvToJson('../mocks/fourItems-invalid.csv');
+    const result = await File.csvToJson('../aula01-mocks/src/mocks/fourItems-invalid.csv');
 
     console.log(result)
 })()
